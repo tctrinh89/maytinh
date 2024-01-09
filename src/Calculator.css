@@ -1,0 +1,74 @@
+.Calculator{
+    /* padding-top: 30px; */
+    display: flex;
+    flex-direction: column;
+
+    width:350px;
+    height:auto;
+    margin: auto;
+    
+    background-color: #fff;
+    border: solid 15px #e3e6e9;
+    border-radius: 30px;
+    /* padding-left: 20px; */
+}
+.Back{
+    display: flex;
+    justify-content:center;
+    padding: 2px 0px;
+}
+.Time{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+h2{
+    margin: 10px 0;
+    text-align: left;
+    padding-left: 20px;
+}
+.Input{
+    display: flex;
+    flex-direction: column;    
+}
+.Input input{
+    height:30px;
+    font-size: 18px;
+    /* background-color: orange; */
+    border: none;
+    text-align: center;
+}
+.Input .question{
+    background-color: orange;
+}
+.Input .answer{
+    background-color: aqua;
+    /* margin: 10px 0; */
+}
+.Buttons{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.Buttons button{
+    width: 50px;
+    height: 50px;
+    margin: 10px 20px 10px 20px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+.Buttons button:last-child,button:nth-child(11){
+    width: 100vh;
+    border-radius: 0;
+    color: red;
+    margin-top: 3px;
+}
+.ketthuc{
+
+    display: none;
+    margin: auto;
+    padding-top:40vh;
+    height:90vh
+
+  }

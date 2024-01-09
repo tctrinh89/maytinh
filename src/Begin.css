@@ -1,0 +1,32 @@
+.Begin{
+    display: flex;
+    height:100vh;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    width:350px;
+    margin: auto;
+    background-color: #fff;
+    border: solid 15px #e3e6e9;
+    border-radius: 30px;
+
+}
+/* .Begin label{
+    justify-content: left;
+} */
+.Begin .input{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+/*
+.Begin .input label{
+    flex-grow: 4;
+    justify-content: left;
+} */
+.Begin .input input{
+   width: 320px;
+   text-align: center;
+}
