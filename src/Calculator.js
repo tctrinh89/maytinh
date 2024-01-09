@@ -28,23 +28,17 @@ function Calculator(){
 
     const [diem,setDiem]=useState(0)
     const [dem,setDem] =useState(0)
-    // const [ketqua,setKetqua]=useState(false)
-    // 
-    // const time=setInterval(()=>{
-    //     setTime(time=>time-1)
-    // },1000)
-    // return ()=>{
-    //     clearInterval(time)}
-    //     }
+    
+   
     useEffect(()=>{
         const times = setInterval(()=>{
                 setTime(time=>time-1)
         },1000)
         return ()=>{
             clearInterval(times)
-        }},
-        [dem]
-    )    
+        }
+    },[dem]
+    )
     const [question,setQuestion]=useState('')
     useEffect(()=>{
         const str=duLieu.dau
@@ -56,60 +50,46 @@ function Calculator(){
         so.sort((a,b) => b-a)
         const pheptoan =`${so[0]} ${random} ${so[1]}`
         setQuestion(pheptoan)
-        
     },[dem])
 
     const [answer,setAnswer]=useState('')
 
     const handleEnter=()=>{
-            if(time <=0){
-                setKetthuc(true)
-            }
+            // if(time <=0){
+            //     setKetthuc(true)
+            // }
             if(eval(question)===Number(answer)){
                 setDiem(diem+1)
                 setDem(dem+1)
                 setAnswer('')
                 setTime(timeInput)
-
             }  else {
             setKetthuc(true)
             setTime(0)
             }
-        
     }
-    // useEffect(
-    //     ()=>{
-    //         const time=setInterval(()=>{
-    //             setTime(time=>time-1)
-    //         },1000)
-    //         return ()=>{
-    //             clearInterval(time)}
-    //     },[]
-    // )
-    //    console.log(duLieu.show)
     
     const [ketthuc,setKetthuc]=useState(false)
-    // useEffect(()=>{
-    //     if(time==0){
-    //     setKetthuc(true)
-    //     } 
-    // },[time])
-    // console.log(ketthuc,time)
-    // console.log(ketthuc)
-
+    useEffect(()=>{
+        if(time<=0){
+        setKetthuc(true)
+        } else {
+            setKetthuc(false)
+        }
+    },[time])
     return(
         <>
         <div className='Begin' style={{display:duLieu.show===true?"flex":'none'}}>
             <div className='input'>
             <label>time</label>
-            <input value={timeInput} onChange={(e)=>setTimeInput(e.target.value)} /><br />
+            <input value={timeInput} onChange={(e)=>setTimeInput(e.target.value)} /> <br />
             </div>
             <div className='input'>
             <label>number</label>
             <input value={number} onChange={(e)=>setNumber(e.target.value)} /><br/>
             </div>
             <div className='input'>
-            <label>dau</label>
+            <label>dau (+,-,*,/)</label>
             <input value={dau} onChange={(e)=>setDau(e.target.value)} /><br/>
             </div>
             <button onClick={handleBegin}>Begin</button>
